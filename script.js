@@ -2,8 +2,17 @@ var resultado = document.querySelector('#resultado');
 var confirmar = document.querySelector('#confirmar');
 
 function insert(num) {
-    resultado.innerHTML += num;
-}
+    if (resultado.innerHTML[resultado.innerHTML.length - 1]  != '+' && resultado.innerHTML[resultado.innerHTML.length - 1]  != '-' && resultado.innerHTML[resultado.innerHTML.length - 1] != '*' && resultado.innerHTML[resultado.innerHTML.length - 1]  != '/') {
+        resultado.innerHTML += num;
+    } else {
+        if (num != '+' && num != '-' && num != '*' && num != '/') {
+            resultado.innerHTML += num;
+        } else {
+        let result = document.getElementById('resultado').innerHTML
+        resultado.innerHTML = result.substring(0, result.length -1) + num;
+        }
+    }
+};
 
 function apagar() {
     resultado.innerHTML = '';
